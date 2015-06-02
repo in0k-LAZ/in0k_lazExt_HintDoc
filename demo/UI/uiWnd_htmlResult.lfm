@@ -1,0 +1,9 @@
+object Wnd_htmlResult: TWnd_htmlResult
+  Left = 404
+  Height = 575
+  Top = 179
+  Width = 689
+  Caption = 'Wnd_htmlResult'
+  OnCreate = FormCreate
+  LCLVersion = '1.2.4.0'
+end

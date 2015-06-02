@@ -1,0 +1,12 @@
+[submodule "srcExt/inkLL_order"]
+	path = srcExt/inkLL_order
+	url = https://github.com/in0k-src/inkLL_order.git
+[submodule "srcExt/inkLL_core"]
+	path = srcExt/inkLL_core
+	url = X:/SINGLE/inkLL_core/inkLL_core__src
+[submodule "srcExt/inkll_core"]
+	path = srcExt/inkll_core
+	url = https://github.com/in0k-src/inkll_core.git
+[submodule "srcExt/inkLL_simple"]
+	path = srcExt/inkLL_simple
+	url = https://github.com/in0k-src/inkLL_simple.git

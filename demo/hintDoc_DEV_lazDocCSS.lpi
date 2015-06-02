@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="hintDoc_DEV_lazDocCSS"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="3">
+      <Item1>
+        <PackageName Value="TurboPowerIPro"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="fpcunittestrunner"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+    </RequiredPackages>
+    <Units Count="16">
+      <Unit0>
+        <Filename Value="hintDoc_DEV_lazDocCSS.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="hintDoc_DEV_lazDocCSS"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="UI\uiWnd_MAIN.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="wnd_MAIN"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uiWnd_MAIN"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\src\in0k_hintDOC_core_Object.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_core_Object"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\srcExt\inkLL_core\inkLL_node.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="inkLL_node"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\src\in0k_hintDOC_core_Finder.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_core_Finder"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\tst\TSTs__in0k_hintDoc__tIn0k_hintDOC.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TSTs__in0k_hintDoc__tIn0k_hintDOC"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__enum_SPRTR_start.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TSTs__in0k_hintDoc_Finder__enum_SPRTR_start"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\src\in0k_hintDOC.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="UI\uiWnd_parseTree.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="wnd_parseTree"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uiWnd_parseTree"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="UI\uiWnd_htmlResult.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Wnd_htmlResult"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uiWnd_htmlResult"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\src\in0k_hintDOC_expM0_toHTML.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_expM0_toHTML"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\srcPKG\in0k_lazExt_hintDOC_exp_IProHTML.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_lazExt_hintDOC_exp_IProHTML"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__Find_string_EXT.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TSTs__in0k_hintDoc_Finder__Find_string_EXT"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\src\in0k_hintDOC_export_Mode0.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_export_Mode0"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__TextFindFirst_srvSMB.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="TSTs__in0k_hintDoc_Finder__TextFindFirst_srvSMB"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="..\src\in0k_hintDOC_exp_IProHTML.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_exp_IProHTML"/>
+      </Unit15>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="hintDoc_DEV_lazDocCSS"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir);..\srcExt\inkLL_order;..\srcExt\inkLL_simple"/>
+      <OtherUnitFiles Value="..\src\UI;..\src;..\srcExt\inkLL_core;..\tst;UI;..\srcPKG"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <RelocatableUnit Value="True"/>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseHeaptrc Value="True"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <IgnoredMessages idx4035="True"/>
+        <MsgFileName Value=""/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="4">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+      <Item4>
+        <Name Value="EAssertionFailedError"/>
+      </Item4>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

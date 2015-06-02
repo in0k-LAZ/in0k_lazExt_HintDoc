@@ -1,0 +1,393 @@
+object wnd_MAIN: Twnd_MAIN
+  Left = 466
+  Height = 495
+  Top = 146
+  Width = 649
+  Caption = 'wnd_MAIN'
+  ClientHeight = 495
+  ClientWidth = 649
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.2.4.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 28
+    Top = 0
+    Width = 649
+    Align = alTop
+    AutoSize = True
+    Caption = 'Panel1'
+    ClientHeight = 28
+    ClientWidth = 649
+    Color = 11453
+    ParentColor = False
+    TabOrder = 0
+    object Button1: TButton
+      AnchorSideTop.Control = Panel1
+      AnchorSideRight.Control = Button2
+      Left = 340
+      Height = 25
+      Top = 1
+      Width = 75
+      Anchors = [akTop, akRight]
+      Caption = 'reParse'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      AnchorSideTop.Control = Panel1
+      AnchorSideRight.Control = Button3
+      Left = 415
+      Height = 25
+      Top = 1
+      Width = 111
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      Caption = 'show parse Tree'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+    object Button3: TButton
+      AnchorSideTop.Control = Panel1
+      AnchorSideRight.Control = Panel1
+      AnchorSideRight.Side = asrBottom
+      Left = 526
+      Height = 25
+      Top = 1
+      Width = 122
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      Caption = 'show result HTML'
+      OnClick = Button3Click
+      TabOrder = 2
+    end
+    object Label1: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      Left = 3
+      Height = 15
+      Top = 1
+      Width = 18
+      BorderSpacing.Left = 2
+      Caption = 'last'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      AnchorSideLeft.Control = Label1
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label1
+      Left = 25
+      Height = 13
+      Top = 1
+      Width = 36
+      BorderSpacing.Left = 4
+      Caption = ' parse'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label3: TLabel
+      AnchorSideLeft.Control = Label2
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      Left = 65
+      Height = 13
+      Top = 1
+      Width = 36
+      BorderSpacing.Left = 4
+      Caption = 'Label3'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label4: TLabel
+      AnchorSideLeft.Control = Label2
+      AnchorSideTop.Control = Label2
+      AnchorSideTop.Side = asrBottom
+      Left = 25
+      Height = 13
+      Top = 14
+      Width = 36
+      Caption = 'toHTML'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label5: TLabel
+      AnchorSideLeft.Control = Label4
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label4
+      Left = 65
+      Height = 13
+      Top = 14
+      Width = 36
+      BorderSpacing.Left = 4
+      Caption = 'Label5'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label7: TLabel
+      AnchorSideLeft.Control = Label6
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      Left = 113
+      Height = 13
+      Top = 1
+      Width = 12
+      BorderSpacing.Left = 2
+      Caption = '12'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label9: TLabel
+      AnchorSideLeft.Control = Label8
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      Left = 135
+      Height = 13
+      Top = 1
+      Width = 18
+      BorderSpacing.Left = 2
+      Caption = '123'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label8: TLabel
+      AnchorSideLeft.Control = Label7
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      Left = 127
+      Height = 13
+      Top = 1
+      Width = 6
+      BorderSpacing.Left = 2
+      Caption = '+'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label10: TLabel
+      AnchorSideLeft.Control = Label9
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      Left = 155
+      Height = 13
+      Top = 1
+      Width = 6
+      BorderSpacing.Left = 2
+      Caption = ')'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label6: TLabel
+      AnchorSideLeft.Control = Label3
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label2
+      Left = 105
+      Height = 13
+      Top = 1
+      Width = 6
+      BorderSpacing.Left = 4
+      Caption = '('
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label11: TLabel
+      AnchorSideLeft.Control = Label5
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label5
+      Left = 105
+      Height = 13
+      Top = 14
+      Width = 6
+      BorderSpacing.Left = 4
+      Caption = '('
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label12: TLabel
+      AnchorSideLeft.Control = Label11
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label5
+      Left = 113
+      Height = 13
+      Top = 14
+      Width = 12
+      BorderSpacing.Left = 2
+      Caption = '12'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label13: TLabel
+      AnchorSideLeft.Control = Label12
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label5
+      Left = 127
+      Height = 13
+      Top = 14
+      Width = 6
+      BorderSpacing.Left = 2
+      Caption = '+'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label14: TLabel
+      AnchorSideLeft.Control = Label13
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label5
+      Left = 135
+      Height = 13
+      Top = 14
+      Width = 18
+      BorderSpacing.Left = 2
+      Caption = '123'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Label15: TLabel
+      AnchorSideLeft.Control = Label14
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = Label5
+      Left = 155
+      Height = 13
+      Top = 14
+      Width = 6
+      BorderSpacing.Left = 2
+      Caption = ')'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -11
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 464
+    Top = 31
+    Width = 649
+    Align = alClient
+    BorderSpacing.Top = 3
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    HideSelection = False
+    Lines.Strings = (
+      'sdf gsdfg sdfg'
+      'sdf gsdfg '
+      '<START>(('
+      'текст "Hint from Comment" преобразовать в "формат" HTML        <'
+      '    парсим текст по средством регулярных выражений'
+      '    @prm(sourceText исходный текст в котором пытаемся найти НАШ формат)'
+      '        @val var1 описание'
+      '        @val var2 описание'
+      '    @prm(inkDoc_Pos начальная позиция найденного фрагмента)'
+      '    @prm(inkDoc_len длинна найденного фрагмента)'
+      '    @prm(htmlText   результат работы функции в формате HTML)'
+      '    @ret(false критическая ошибка, НИЧЕГО не смогли поделать, или этотого '
+      'фрагмента нет)'
+      '        @val var1 описание'
+      '        @val var2 описание'
+      ''
+      '    @exc(false критическая ошибка, НИЧЕГО не смогли поделать, или этотого '
+      'фрагмента нет)'
+      '        @val var1 описание'
+      '        @val var2 описание'
+      ''
+      '    ---'
+      '    не совсем аккуратное (в смысле кода и кода html). и вооббще, надо сделать'
+      '    нормальный парсинг и синтактическим деревом для отлова вложенных скобок.'
+      '))<fiNAL>'
+      'sadf asdf asdf s'
+      'dF asdf '
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 1
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    left = 135
+    top = 48
+  end
+end

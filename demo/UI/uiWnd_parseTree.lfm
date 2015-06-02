@@ -1,0 +1,21 @@
+object wnd_parseTree: Twnd_parseTree
+  Left = 924
+  Height = 847
+  Top = 4
+  Width = 453
+  Caption = 'wnd_parseTree'
+  ClientHeight = 847
+  ClientWidth = 453
+  LCLVersion = '1.2.4.0'
+  object parseTree: TTreeView
+    Left = 0
+    Height = 847
+    Top = 0
+    Width = 453
+    Align = alClient
+    DefaultItemHeight = 18
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+  end
+end
