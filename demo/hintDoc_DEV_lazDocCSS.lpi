@@ -28,22 +28,27 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="3">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="TurboPowerIPro"/>
+        <PackageName Value="CodeTools"/>
       </Item1>
       <Item2>
-        <PackageName Value="fpcunittestrunner"/>
+        <PackageName Value="SynEdit"/>
       </Item2>
       <Item3>
-        <PackageName Value="LCL"/>
+        <PackageName Value="TurboPowerIPro"/>
       </Item3>
+      <Item4>
+        <PackageName Value="fpcunittestrunner"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
-    <Units Count="16">
+    <Units Count="18">
       <Unit0>
         <Filename Value="hintDoc_DEV_lazDocCSS.lpr"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="hintDoc_DEV_lazDocCSS"/>
       </Unit0>
       <Unit1>
         <Filename Value="UI\uiWnd_MAIN.pas"/>
@@ -56,27 +61,22 @@
       <Unit2>
         <Filename Value="..\src\in0k_hintDOC_core_Object.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="in0k_hintDOC_core_Object"/>
       </Unit2>
       <Unit3>
         <Filename Value="..\srcExt\inkLL_core\inkLL_node.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="inkLL_node"/>
       </Unit3>
       <Unit4>
         <Filename Value="..\src\in0k_hintDOC_core_Finder.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="in0k_hintDOC_core_Finder"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\tst\TSTs__in0k_hintDoc__tIn0k_hintDOC.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="TSTs__in0k_hintDoc__tIn0k_hintDOC"/>
       </Unit5>
       <Unit6>
         <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__enum_SPRTR_start.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="TSTs__in0k_hintDoc_Finder__enum_SPRTR_start"/>
       </Unit6>
       <Unit7>
         <Filename Value="..\src\in0k_hintDOC.pas"/>
@@ -102,33 +102,40 @@
       <Unit10>
         <Filename Value="..\src\in0k_hintDOC_expM0_toHTML.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="in0k_hintDOC_expM0_toHTML"/>
       </Unit10>
       <Unit11>
         <Filename Value="..\srcPKG\in0k_lazExt_hintDOC_exp_IProHTML.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="in0k_lazExt_hintDOC_exp_IProHTML"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__Find_string_EXT.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="TSTs__in0k_hintDoc_Finder__Find_string_EXT"/>
       </Unit12>
       <Unit13>
         <Filename Value="..\src\in0k_hintDOC_export_Mode0.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="in0k_hintDOC_export_Mode0"/>
       </Unit13>
       <Unit14>
         <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__TextFindFirst_srvSMB.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="TSTs__in0k_hintDoc_Finder__TextFindFirst_srvSMB"/>
       </Unit14>
       <Unit15>
         <Filename Value="..\src\in0k_hintDOC_exp_IProHTML.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="in0k_hintDOC_exp_IProHTML"/>
       </Unit15>
+      <Unit16>
+        <Filename Value="..\src\in0k_hintDOC_core_ParserSettings.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="UI\uiWnd_parseTEXT.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="wnd_parseTEXT"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uiWnd_parseTEXT"/>
+      </Unit17>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -171,9 +178,7 @@
     <Other>
       <CompilerMessages>
         <IgnoredMessages idx4035="True"/>
-        <MsgFileName Value=""/>
       </CompilerMessages>
-      <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
   <Debugging>

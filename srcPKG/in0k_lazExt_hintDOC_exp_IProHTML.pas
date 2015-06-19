@@ -20,7 +20,7 @@ implementation
 
 function tIn0k_lazExt_hintDOC_exp_IProHTML.execute_GENerate(const W:rIn0k_hintDOC_ExpWRK):string;
 begin
-    result:=inherited;
+    result:='<table border=1><tr><td>'+inherited+'</td></tr></table>';
 end;
 
 end.

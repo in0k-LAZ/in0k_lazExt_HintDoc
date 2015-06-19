@@ -183,6 +183,14 @@ const //< "самостоятельные" ТЕГИ
                       _cHtmlSmb_space+_cHtmlWrd_cellspacing+_cHtmlSmb_equal+_cHtmlSmb_quotes+_cHtmlSmb_NOL+_cHtmlSmb_quotes+
                       _cHtmlSmb_END;
 
+  _cHtml_TAG_TBLCsrt0_=_cHtmlSmb_SRT+_cHtmlTag_TBL_+
+                      _cHtmlSmb_space+_cHtmlWrd_border+_cHtmlSmb_equal+_cHtmlSmb_quotes+_cHtmlSmb_NOL+_cHtmlSmb_quotes+
+                      _cHtmlSmb_space+_cHtmlWrd_cellpadding+_cHtmlSmb_equal+_cHtmlSmb_quotes+_cHtmlSmb_NOL+_cHtmlSmb_quotes+
+                      _cHtmlSmb_space+_cHtmlWrd_cellspacing+_cHtmlSmb_equal+_cHtmlSmb_quotes+_cHtmlSmb_NOL+_cHtmlSmb_quotes+
+                       //' width=100% '+
+                       'style="max-width=100px;"'+
+                      _cHtmlSmb_END;
+
 {$endRegion}
 
 {$region --- функции генерирования обобщенной HTML разметка ------ /fold }
@@ -654,7 +662,7 @@ begin
         //--- оборачиваем в таблицу
         result:= _cHtml_TAG_TBLCsrt_+_gHtml_ROW_WIDTHS_(W,contEXT)+result+_cHtml_TAG_TBL_end_;
         //--- фигня конкретно для IPro, иначе width=100% криво работает
-        result :=_cHtml_TAG_TBLCsrt_+_cHtml_TAG_TR_srt_+_cHtml_TAG_TD_srt_+
+        result :=_cHtml_TAG_TBLCsrt0_+_cHtml_TAG_TR_srt_+_cHtml_TAG_TD_srt_+
                   result+
                  _cHtml_TAG_TD_end_+_cHtml_TAG_TR_end_+_cHtml_TAG_TBL_end_;
 

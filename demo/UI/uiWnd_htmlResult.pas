@@ -6,7 +6,7 @@ interface
 
 uses  //IPIDEHTMLControl,
   Classes, SysUtils, FileUtil, IpHtml, Ipfilebroker, Forms, Controls, Graphics,
-  Dialogs, LConvEncoding, IpMsg;
+  Dialogs, ExtCtrls, StdCtrls, LConvEncoding, IpMsg;
 
 type
 
@@ -23,6 +23,10 @@ type
  { TWnd_htmlResult }
 
  TWnd_htmlResult = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    Panel1: TPanel;
+    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   public
     function DataProvider1CanHandle(Sender: TObject; const URL: string
@@ -177,12 +181,20 @@ begin
 
 end;
 
+procedure TWnd_htmlResult.Button1Click(Sender: TObject);
+begin
+    if Assigned(IpHtmlPanel1) then begin
+       // IpHtmlPanel1.TextColor:=;
+    end;
+end;
+
 procedure TWnd_htmlResult.ShowHTML(Src: string);
 var
   ss: TStringStream;
   NewHTML: TIpHtml;
 begin
   ss := TStringStream.Create(Src);
+  memo1.Text:=SRC;
   try
     NewHTML := TIpHtml.Create; // Beware: Will be freed automatically by IpHtmlPanel1
     //debugln(['TForm1.ShowHTML BEFORE SETHTML']);

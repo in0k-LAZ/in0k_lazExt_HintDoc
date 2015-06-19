@@ -9,9 +9,15 @@ uses in0k_hintDOC,
      in0k_hintDOC_exp_IProHTML,
      //in0k_lazExt_hintDOC_exp_IProHTML,
 in0k_hintDOC_core_Token,
+    //---
+     uiWnd_parseTEXT,
+     uiWnd_parseTree,
+     uiWnd_htmlResult,
+    //---
+     BasicCodeTools,
 
-      uiWnd_parseTree,uiWnd_htmlResult, windows,
-Classes, SysUtils, FileUtil, Forms,      LCLProc,
+     windows,
+Classes, SysUtils, FileUtil, SynMemo, Forms,      LCLProc,
   Controls, Graphics, Dialogs, StdCtrls, ComCtrls, ExtCtrls;
 
 type
@@ -22,6 +28,7 @@ type
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
+    Button4: TButton;
     FontDialog1: TFontDialog;
     Label1: TLabel;
     Label10: TLabel;
@@ -38,11 +45,16 @@ type
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
-    Memo1: TMemo;
+    PageControl1: TPageControl;
     Panel1: TPanel;
+    SynMemo1: TSynMemo;
+    SynMemo2: TSynMemo;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   protected
@@ -57,6 +69,8 @@ type
    _expSTR:string;
     procedure _do_PARSE;
     procedure _do_Exprt;
+    //---
+    function  _do_getParceTEXT(const srcText:string):string;
   public
     procedure setExportSettings(var STNG:rIn0k_hintDOC_expM0T0__Config);
   public
@@ -115,6 +129,20 @@ asdf asd
 
 
 {$R *.lfm}
+
+{:Reconfigure communication parameters on the fly. You must be connected to
+     port before!
+     @param(baud Define connection speed. Baud rate can be from 50 to 4000000
+      bits per second. (it depends on your hardware!))
+     @param(bits Number of bits in communication.)
+     @param(parity Define communication parity (N - None, O - Odd, E - Even, M - Mark or S - Space).)
+     @param(stop Define number of stopbits. Use constants @link(SB1),
+      @link(SB1andHalf) and @link(SB2).)
+     @param(softflow Enable XON/XOFF handshake.)
+     @param(hardflow Enable CTS/RTS handshake.)}
+
+
+
 
 { Twnd_MAIN }
 
@@ -211,6 +239,32 @@ end;
 
 //------------------------------------------------------------------------------
 
+function Twnd_MAIN._do_getParceTEXT(const srcText:string):string;
+var src_Length  :integer;
+var CommentStart:integer;
+var CommentEnd  :integer;
+
+    NestedComments:boolean;
+begin
+    Result:='';
+    src_Length:=length(srcText);
+    if src_Length>0 then begin
+        NestedComments:=true;
+        CommentStart:=0;
+        while CommentStart<src_Length do begin
+            CommentStart:=FindNextComment(srcText,CommentStart,src_Length);
+            if CommentStart<src_Length then begin
+                Result:=Result+ExtractCommentContent(srcText,CommentStart, NestedComments,true,true,true)+LineEnding;
+            end
+            else BREAK;
+            //>--
+            CommentStart:=FindCommentEnd(srcText,CommentStart,NestedComments);
+        end;
+    end;
+end;
+
+//------------------------------------------------------------------------------
+
 type
  tMyParseTHREAD=class(TThread)
   protected
@@ -241,7 +295,8 @@ begin
    _lbs_spd_parse_CLR;
     uiWnd_parseTree_Clear;
     //---
-    hintDOC_Object.SourceText:=memo1.Text;
+    SynMemo2.Text:=_do_getParceTEXT(SynMemo1.Text);
+    hintDOC_Object.SourceText:=SynMemo2.Text;
     //---
     parseTHREAD:=tMyParseTHREAD.Create;
     parseTHREAD.WaitFor;
@@ -319,120 +374,21 @@ begin
    _do_Exprt;
 end;
 
+procedure Twnd_MAIN.Button4Click(Sender: TObject);
+begin
+    uiWnd_parseText_SHOW;
+end;
+
 //------------------------------------------------------------------------------
+
+// https://www.google.ru/design/spec/style/color.html# (400/600)
+
+
+
 
 procedure Twnd_MAIN.setExportSettings(var STNG:rIn0k_hintDOC_expM0T0__Config);
 begin
-    In0k_hintDOC_expM0T0__Config__Init(@STNG);
-    //In0k_hintDOC_expM0T0_GRP__INIT(@STNG.val);
-    //In0k_hintDOC_expM0T0_GRP__INIT(@STNG.prm);
-    //In0k_hintDOC_expM0T0_GRP__INIT(@STNG.ret);
-    //I/n0k_hintDOC_expM0T0_GRP__INIT(@STNG.exc);
-    //In0k_hintDOC_expM0T0_GRP__INIT(@STNG.CMM);
-
-    STNG.document_CAPT_BTA.befo:='<b>';
-    STNG.document_CAPT_BTA.afte:='</b>';
-    STNG.document_ARTC_BTA.befo:='';
-    STNG.document_ARTC_BTA.afte:='';
-    //---
-    STNG.sections_CAPT_BTA.befo:='<font size=-2>';
-    STNG.sections_CAPT_BTA.afte:='</font>';
-    STNG.sections_ARTC_BTA.befo:='<font size=-2>';
-    STNG.sections_ARTC_BTA.afte:='</font>';
-    //---
-    STNG.group_EXC.Header_Text:='<font color="#C66C8F" size="-2">&nbsp;исключения</font>';
-    STNG.group_EXC.BrdLFT_clrs_single  :=$8F6CC6;
-    STNG.group_EXC.GridHLine.clrs.clr00:=$8F6CC6;
-    STNG.group_EXC.GridHInLN.clrs.clr00:=$8F6CC6;
-    STNG.group_EXC.GridHBtwn.clrs.clr00:=$8F6CC6;
-    //---
-    STNG.group_PRM.Header_Text:='<font color="#8FC66C" size="1">&nbsp;параметры</font>';
-    STNG.group_PRM.BrdLFT_clrs_single   :=$6CC68F;
-    STNG.group_PRM.GridHLine.clrs.clr01 :=$6CC68F;
-    //---
-    STNG.group_RET.Header_Text:='<font color="#6C8FC6" size="-2">&nbsp;результат</font>';
-    STNG.group_RET.BrdLFT_clrs_single  :=$C68F6C;
-    STNG.group_RET.GridHLine.clrs.clr00:=$C68F6C;
-    STNG.group_RET.GridHInLN.clrs.clr00:=$C68F6C;
-    STNG.group_RET.GridHBtwn.clrs.clr00:=$C68F6C;
-    //---
-    STNG.group_VAL.Header_Text:='';//'<font color="#606060" size="-2">&nbsp;значения</font>';
-    STNG.group_VAL.BrdLFT_clrs_single:=$606060;
-
-    //---
-    //STNG.grpCOMMON.lFT_Width:='3';
-    //STNG.grpCOMMON.lFT_Color:='';
-    //STNG.grpCOMMON.captCLR  :='#dddddd';
-    //---
-    //---
-    //STNG.grpCOMMON.celLineV_width:='1';
-    //STNG.grpCOMMON.celLineV_color:='#dddddd';
-    //STNG.grpCOMMON.celLineG_width:='1';
-    //STNG.grpCOMMON.celLineG_color:='#dddddd';
-
-    //---
-    STNG.grpCOMMON.BefoAfte_Cell.befo:='<font size="-2">';
-    STNG.grpCOMMON.BefoAfte_Cell.afte:='</font>';
-    //---
-    STNG.grpCOMMON.BefoAfte_DEFI.befo:='<font face="Consolas" color="#333333"><b>';
-    STNG.grpCOMMON.BefoAfte_DEFI.afte:='</b></font>';
-    STNG.grpCOMMON.BefoAfte_DESC.befo:='';//'<font size="-2">';
-    STNG.grpCOMMON.BefoAfte_DESC.afte:='';//'</font>';
-    //---
-    STNG.grpCOMMON.BefoAfte_CAPT.befo:='<b>';
-    STNG.grpCOMMON.BefoAfte_CAPT.afte:='</b>';
-    STNG.grpCOMMON.BefoAfte_ARTC.befo:='';//'<font size="-2">';
-    STNG.grpCOMMON.BefoAfte_ARTC.afte:='';//'</font>';
-
-
-   // STNG.grpCOMMON.BRD_Width:='5';
-   // STNG.grpCOMMON.BRD_Color:='#eeeeee';
-
-
-    STNG.grpCOMMON.BrdLFT_clrs_header:=clDefault;
-    //-----------------
-    STNG.grpCOMMON.BrdLFT_size:=3;
-    STNG.grpCOMMON.BrdLFT_clrs_single:=$dddddd;
-    STNG.grpCOMMON.BrdLFT_clrs_inline:=clDefault;
-    //-----------------
-
-    STNG.grpCOMMON.Border.size:=1;
-    STNG.grpCOMMON.Border.clrs.color:=$aaaaaa;
-    STNG.grpCOMMON.brdInL.size:=0;
-    STNG.grpCOMMON.BrdInL.CLRs.color:=clDefault;
-
-    STNG.grpCOMMON.GridVLine_size:=1;
-    STNG.grpCOMMON.GridVLine_clrs_single:=$bbbbbb;
-    STNG.grpCOMMON.GridVLine_clrs_inline:=$dddddd;
-
-    STNG.grpCOMMON.GridHLine.size:=1;
-    STNG.grpCOMMON.GridHLine.clrs.color:=$bbbbbb;
-    STNG.grpCOMMON.GridHInLN.size:=1;
-    STNG.grpCOMMON.GridHInLN.clrs.color:=$dddddd;
-
-    STNG.grpCOMMON.GridHBtwn.size:=1;
-    STNG.grpCOMMON.GridHBtwn.clrs.color:=$cccccc;
-
-    STNG.grpCOMMON.Indent_DFND_L:=1;
-    STNG.grpCOMMON.Indent_DFND_R:=1;
-    STNG.grpCOMMON.Indent_DTLS_L:=1;
-    STNG.grpCOMMON.Indent_DTLS_R:=1;
-
-    STNG.grpCOMMON.Row_Color_00:=$fbfbfb;
-    STNG.grpCOMMON.Row_Color_01:=$fefefe;
-
-    {STNG.CMM.CellLV_single_width:= 1;
-    STNG.CMM.CellLV_single_color:=$ee0000;
-    STNG.CMM.CellLV_inline_width:= 1;
-    STNG.CMM.CellLV_inline_color:=$00ee00;
-
-    STNG.CMM.CellLH_single_pMode:= 0;
-    STNG.CMM.CellLH_single_width:= 1;
-    STNG.CMM.CellLH_single_color:=$0000ee;
-    STNG.CMM.CellLH_inline_pMode:= 1;
-    STNG.CMM.CellLH_inline_width:= 1;
-    STNG.CMM.CellLH_inline_color:=$eeee00; }
-
+    In0k_hintDOC_expM0T0__Config__Init_in0k(@STNG);
 end;
 
 //------------------------------------------------------------------------------
@@ -446,8 +402,14 @@ begin //
     c:=copy(hintDOC_Object.SourceText,1+sPos,sLen);
     ls:=UTF8Length(s);
     lc:=UTF8Length(c);
-    memo1.SelStart :=ls;//i;
-    memo1.SelLength:=lc;//1;//   sLen;
+    //SynMemo1.SelStart :=ls;//i;
+    //SynMemo1.SelEnd   :=ls+lc;//i;
+    SynMemo2.SelStart :=1+sPos;//i;
+    SynMemo2.SelEnd   :=1+sPos+sLen;//i;
+    //SelEnd
+    //SynMemo1.SelLength:=lc;//1;//   sLen;
+    PageControl1.PageIndex:=1;
+
 end;
 
 

@@ -19,7 +19,7 @@ uses
   //---
   FPCUnitTestRunner, GuiTestRunner, Forms, uiWnd_MAIN, uiWnd_parseTree,
   uiWnd_htmlResult, in0k_hintDOC_expM0_toHTML, in0k_hintDOC_export_Mode0, 
-in0k_hintDOC_exp_IProHTML;
+in0k_hintDOC_exp_IProHTML, in0k_hintDOC_core_parserSettings, uiWnd_parseTEXT;
 
 {$R *.res}
 
@@ -27,9 +27,9 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(Twnd_MAIN, wnd_MAIN);
-  Application.CreateForm(TGuiTestRunner, TestRunner);
-  TestRunner.Show;
   Application.CreateForm(TWnd_htmlResult, Wnd_htmlResult);
+  Application.CreateForm(Twnd_parseTree, wnd_parseTree);
+  //TestRunner.Show;
   Application.Run;
 end.
 

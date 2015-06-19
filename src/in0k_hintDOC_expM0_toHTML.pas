@@ -25,7 +25,8 @@ unit in0k_hintDOC_expM0_toHTML;
 
 interface
 
-uses Graphics, sysutils, strutils, in0k_hintDOC, in0k_hintDOC_core_Token, in0k_hintDOC_export_Mode0;
+uses Graphics, sysutils, strutils, in0k_hintDOC, in0k_hintDOC_core_Token,
+    in0k_hintDOC_export_Mode0;
 
 
 {%region --- настройти для ЭКСПОРТА ------------------------------ /fold }
@@ -127,6 +128,9 @@ type
  pIn0k_hintDOC_expM0T0__Config=^rIn0k_hintDOC_expM0T0__Config;
 
 procedure In0k_hintDOC_expM0T0__Config__Init(const value:pIn0k_hintDOC_expM0T0__Config);
+
+procedure In0k_hintDOC_expM0T0__Config__Init_in0k(const value:pIn0k_hintDOC_expM0T0__Config);
+
 
 {%endregion}
 
@@ -311,6 +315,93 @@ begin
         In0k_hintDOC_expM0T0__GRP__Init(@group_RET);
         In0k_hintDOC_expM0T0__GRP__Init(@group_VAL);
     end;
+end;
+
+procedure In0k_hintDOC_expM0T0__Config__Init_in0k(const value:pIn0k_hintDOC_expM0T0__Config);
+begin
+    In0k_hintDOC_expM0T0__Config__Init(value);
+    //---
+    value^.document_CAPT_BTA.befo:='<b>';
+    value^.document_CAPT_BTA.afte:='</b>';
+    value^.document_ARTC_BTA.befo:='';
+    value^.document_ARTC_BTA.afte:='';
+    //---
+    value^.sections_CAPT_BTA.befo:='<font size=-2>';
+    value^.sections_CAPT_BTA.afte:='</font>';
+    value^.sections_ARTC_BTA.befo:='<font size=-2>';
+    value^.sections_ARTC_BTA.afte:='</font>';
+    //---
+    value^.group_EXC.Header_Text:='<font color="#F4511E" size="-2">&nbsp;<b>исключения</b></font>';
+    value^.group_EXC.BrdLFT_clrs_single  :=$FF7043;
+    value^.group_EXC.GridHLine.clrs.clr00:=$FF7043;
+    value^.group_EXC.GridHInLN.clrs.clr00:=$FF7043;
+    value^.group_EXC.GridHBtwn.clrs.clr00:=$FF7043;
+    value^.group_EXC.BefoAfte_DEFI.befo:='<font face="Consolas" color="#BF360C"><b>';
+    value^.group_EXC.BefoAfte_DEFI.afte:='</b></font>';
+    //---
+    value^.group_PRM.Header_Text:='<font color="#43A047" size="1">&nbsp;<b>параметры</b></font>';
+    value^.group_PRM.BrdLFT_clrs_single   :=$66BB6A;
+    value^.group_PRM.GridHLine.clrs.clr01 :=$66BB6A;
+    value^.group_PRM.BefoAfte_DEFI.befo:='<font face="Consolas" color="#1B5E20"><b>';
+    value^.group_PRM.BefoAfte_DEFI.afte:='</b></font>';
+    //---
+    value^.group_RET.Header_Text:='<font color="#039BE5" size="-2">&nbsp;<b>результат</b></font>';
+    value^.group_RET.BrdLFT_clrs_single  :=$29B6F6;
+    value^.group_RET.GridHLine.clrs.clr00:=$29B6F6;
+    value^.group_RET.GridHInLN.clrs.clr00:=$29B6F6;
+    value^.group_RET.GridHBtwn.clrs.clr00:=$29B6F6;
+    value^.group_RET.BefoAfte_DEFI.befo:='<font face="Consolas" color="#01579B"><b>';
+    value^.group_RET.BefoAfte_DEFI.afte:='</b></font>';
+    //---
+    value^.group_VAL.Header_Text:='';//'<font color="#606060" size="-2">&nbsp;значения</font>';
+    value^.group_VAL.BrdLFT_clrs_single:=$8D6E63;
+    value^.group_VAL.BefoAfte_DEFI.befo:='<font face="Consolas" color="#4E342E"><b>';
+    value^.group_VAL.BefoAfte_DEFI.afte:='</b></font>';
+    //---
+    value^.grpCOMMON.BefoAfte_Cell.befo:='<font size="-2">';
+    value^.grpCOMMON.BefoAfte_Cell.afte:='</font>';
+    //---
+    value^.grpCOMMON.BefoAfte_DEFI.befo:='<font face="Consolas" color="#333333"><b>';
+    value^.grpCOMMON.BefoAfte_DEFI.afte:='</b></font>';
+    value^.grpCOMMON.BefoAfte_DESC.befo:='';//'<font size="-2">';
+    value^.grpCOMMON.BefoAfte_DESC.afte:='';//'</font>';
+    //---
+    value^.grpCOMMON.BefoAfte_CAPT.befo:='<b>';
+    value^.grpCOMMON.BefoAfte_CAPT.afte:='</b>';
+    value^.grpCOMMON.BefoAfte_ARTC.befo:='';//'<font size="-2">';
+    value^.grpCOMMON.BefoAfte_ARTC.afte:='';//'</font>';
+
+    value^.grpCOMMON.BrdLFT_clrs_header:=clDefault;
+    //-----------------
+    value^.grpCOMMON.BrdLFT_size:=3;
+    value^.grpCOMMON.BrdLFT_clrs_single:=$dddddd;
+    value^.grpCOMMON.BrdLFT_clrs_inline:=clDefault;
+    //-----------------
+
+    value^.grpCOMMON.Border.size:=1;
+    value^.grpCOMMON.Border.clrs.color:=$aaaaaa;
+    value^.grpCOMMON.brdInL.size:=0;
+    value^.grpCOMMON.BrdInL.CLRs.color:=clDefault;
+
+    value^.grpCOMMON.GridVLine_size:=1;
+    value^.grpCOMMON.GridVLine_clrs_single:=$bbbbbb;
+    value^.grpCOMMON.GridVLine_clrs_inline:=$dddddd;
+
+    value^.grpCOMMON.GridHLine.size:=1;
+    value^.grpCOMMON.GridHLine.clrs.color:=$bbbbbb;
+    value^.grpCOMMON.GridHInLN.size:=1;
+    value^.grpCOMMON.GridHInLN.clrs.color:=$dddddd;
+
+    value^.grpCOMMON.GridHBtwn.size:=1;
+    value^.grpCOMMON.GridHBtwn.clrs.color:=$cccccc;
+
+    value^.grpCOMMON.Indent_DFND_L:=1;
+    value^.grpCOMMON.Indent_DFND_R:=1;
+    value^.grpCOMMON.Indent_DTLS_L:=1;
+    value^.grpCOMMON.Indent_DTLS_R:=1;
+
+    value^.grpCOMMON.Row_Color_00:=$fbfbfb;
+    value^.grpCOMMON.Row_Color_01:=$fefefe;
 end;
 
 {%endregion}
