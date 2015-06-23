@@ -38,7 +38,6 @@ begin
     hinDoc.FREE;
     //
     result:=true;
-    //if result<>'' then result:=result+LineEnding;
 end;
 
 initialization

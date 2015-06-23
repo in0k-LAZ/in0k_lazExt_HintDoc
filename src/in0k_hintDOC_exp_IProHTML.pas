@@ -187,8 +187,7 @@ const //< "самостоятельные" ТЕГИ
                       _cHtmlSmb_space+_cHtmlWrd_border+_cHtmlSmb_equal+_cHtmlSmb_quotes+_cHtmlSmb_NOL+_cHtmlSmb_quotes+
                       _cHtmlSmb_space+_cHtmlWrd_cellpadding+_cHtmlSmb_equal+_cHtmlSmb_quotes+_cHtmlSmb_NOL+_cHtmlSmb_quotes+
                       _cHtmlSmb_space+_cHtmlWrd_cellspacing+_cHtmlSmb_equal+_cHtmlSmb_quotes+_cHtmlSmb_NOL+_cHtmlSmb_quotes+
-                       //' width=100% '+
-                       'style="max-width=100px;"'+
+                       ' width=100% '+
                       _cHtmlSmb_END;
 
 {$endRegion}

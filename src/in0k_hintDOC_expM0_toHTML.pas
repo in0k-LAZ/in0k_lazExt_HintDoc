@@ -321,8 +321,8 @@ procedure In0k_hintDOC_expM0T0__Config__Init_in0k(const value:pIn0k_hintDOC_expM
 begin
     In0k_hintDOC_expM0T0__Config__Init(value);
     //---
-    value^.document_CAPT_BTA.befo:='<b>';
-    value^.document_CAPT_BTA.afte:='</b>';
+    value^.document_CAPT_BTA.befo:='<font size=-2><b>';
+    value^.document_CAPT_BTA.afte:='</b></font>';
     value^.document_ARTC_BTA.befo:='';
     value^.document_ARTC_BTA.afte:='';
     //---
