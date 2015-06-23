@@ -356,12 +356,12 @@ object wnd_MAIN: Twnd_MAIN
     Height = 568
     Top = 28
     Width = 649
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 1
     object TabSheet1: TTabSheet
-      Caption = 'srcEDITOR'
+      Caption = 'text in SOURCE editor'
       ClientHeight = 540
       ClientWidth = 641
       inline SynMemo1: TSynMemo
@@ -878,9 +878,10 @@ object wnd_MAIN: Twnd_MAIN
       end
     end
     object TabSheet2: TTabSheet
-      Caption = 'parce TEXT'
+      Caption = 'text for PARSING'
       ClientHeight = 540
       ClientWidth = 641
+      OnShow = TabSheet2Show
       inline SynMemo2: TSynMemo
         Cursor = crIBeam
         Left = 0

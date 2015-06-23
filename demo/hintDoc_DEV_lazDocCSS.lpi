@@ -81,7 +81,6 @@
       <Unit7>
         <Filename Value="..\src\in0k_hintDOC.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="in0k_hintDOC"/>
       </Unit7>
       <Unit8>
         <Filename Value="UI\uiWnd_parseTree.pas"/>
@@ -89,7 +88,6 @@
         <ComponentName Value="wnd_parseTree"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uiWnd_parseTree"/>
       </Unit8>
       <Unit9>
         <Filename Value="UI\uiWnd_htmlResult.pas"/>
@@ -97,7 +95,6 @@
         <ComponentName Value="Wnd_htmlResult"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uiWnd_htmlResult"/>
       </Unit9>
       <Unit10>
         <Filename Value="..\src\in0k_hintDOC_expM0_toHTML.pas"/>
@@ -122,7 +119,6 @@
       <Unit15>
         <Filename Value="..\src\in0k_hintDOC_exp_IProHTML.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="in0k_hintDOC_exp_IProHTML"/>
       </Unit15>
       <Unit16>
         <Filename Value="..\src\in0k_hintDOC_core_ParserSettings.pas"/>
@@ -134,7 +130,6 @@
         <ComponentName Value="wnd_parseTEXT"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <UnitName Value="uiWnd_parseTEXT"/>
       </Unit17>
     </Units>
   </ProjectOptions>

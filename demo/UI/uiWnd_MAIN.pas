@@ -57,6 +57,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure TabSheet2Show(Sender: TObject);
   protected
     procedure _lbs_spd_parse_CLR;
     procedure _lbs_spd_parse_set(inKernel,inUser:TFILETIME);
@@ -69,8 +70,10 @@ type
    _expSTR:string;
     procedure _do_PARSE;
     procedure _do_Exprt;
-    //---
-    function  _do_getParceTEXT(const srcText:string):string;
+  protected
+    function  _source2parsing_(const srcText:string):string;
+    procedure _srcEdt2prcEdit_;
+    function  _srcEdt_getPrcT_:string;
   public
     procedure setExportSettings(var STNG:rIn0k_hintDOC_expM0T0__Config);
   public
@@ -187,6 +190,11 @@ begin
    hintDOC_Object.Free;
 end;
 
+procedure Twnd_MAIN.TabSheet2Show(Sender: TObject);
+begin
+   _srcEdt2prcEdit_;
+end;
+
 //------------------------------------------------------------------------------
 
 const cTextNDF='---';
@@ -239,11 +247,12 @@ end;
 
 //------------------------------------------------------------------------------
 
-function Twnd_MAIN._do_getParceTEXT(const srcText:string):string;
+// имитируем работу Lazarus`а при вытягивании комментария из исходников.
+// --- вообще говоря пользуемся теми же процедурами, что должно хорошо
+//     сказаться на достоверности результата
+function Twnd_MAIN._source2parsing_(const srcText:string):string;
 var src_Length  :integer;
-var CommentStart:integer;
-var CommentEnd  :integer;
-
+    CommentStart:integer;
     NestedComments:boolean;
 begin
     Result:='';
@@ -261,6 +270,19 @@ begin
             CommentStart:=FindCommentEnd(srcText,CommentStart,NestedComments);
         end;
     end;
+end;
+
+//------------------------------------------------------------------------------
+
+procedure Twnd_MAIN._srcEdt2prcEdit_;
+begin
+    SynMemo2.Text:=_source2parsing_(SynMemo1.Text);
+end;
+
+function Twnd_MAIN._srcEdt_getPrcT_:string;
+begin
+   _srcEdt2prcEdit_;
+    result:=SynMemo2.Text;
 end;
 
 //------------------------------------------------------------------------------
@@ -295,8 +317,7 @@ begin
    _lbs_spd_parse_CLR;
     uiWnd_parseTree_Clear;
     //---
-    SynMemo2.Text:=_do_getParceTEXT(SynMemo1.Text);
-    hintDOC_Object.SourceText:=SynMemo2.Text;
+    hintDOC_Object.SourceText:=_srcEdt_getPrcT_;
     //---
     parseTHREAD:=tMyParseTHREAD.Create;
     parseTHREAD.WaitFor;
