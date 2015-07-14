@@ -61,6 +61,7 @@
       <Unit2>
         <Filename Value="..\src\in0k_hintDOC_core_Object.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_core_Object"/>
       </Unit2>
       <Unit3>
         <Filename Value="..\srcExt\inkLL_core\inkLL_node.pas"/>
@@ -69,6 +70,7 @@
       <Unit4>
         <Filename Value="..\src\in0k_hintDOC_core_Finder.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_core_Finder"/>
       </Unit4>
       <Unit5>
         <Filename Value="..\tst\TSTs__in0k_hintDoc__tIn0k_hintDOC.pas"/>
@@ -81,6 +83,7 @@
       <Unit7>
         <Filename Value="..\src\in0k_hintDOC.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC"/>
       </Unit7>
       <Unit8>
         <Filename Value="UI\uiWnd_parseTree.pas"/>
@@ -88,6 +91,7 @@
         <ComponentName Value="wnd_parseTree"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uiWnd_parseTree"/>
       </Unit8>
       <Unit9>
         <Filename Value="UI\uiWnd_htmlResult.pas"/>
@@ -103,6 +107,7 @@
       <Unit11>
         <Filename Value="..\srcPKG\in0k_lazExt_hintDOC_exp_IProHTML.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_lazExt_hintDOC_exp_IProHTML"/>
       </Unit11>
       <Unit12>
         <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__Find_string_EXT.pas"/>
@@ -111,6 +116,7 @@
       <Unit13>
         <Filename Value="..\src\in0k_hintDOC_export_Mode0.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_export_Mode0"/>
       </Unit13>
       <Unit14>
         <Filename Value="..\tst\TSTs__in0k_hintDoc_Finder__TextFindFirst_srvSMB.pas"/>
@@ -119,10 +125,12 @@
       <Unit15>
         <Filename Value="..\src\in0k_hintDOC_exp_IProHTML.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_exp_IProHTML"/>
       </Unit15>
       <Unit16>
         <Filename Value="..\src\in0k_hintDOC_core_ParserSettings.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="in0k_hintDOC_core_parserSettings"/>
       </Unit16>
       <Unit17>
         <Filename Value="UI\uiWnd_parseTEXT.pas"/>

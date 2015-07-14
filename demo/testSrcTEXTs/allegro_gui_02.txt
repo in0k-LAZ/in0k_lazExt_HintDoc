@@ -1,0 +1,3 @@
+/* dclick_check:
+ *  Double click checking user timer routine.
+ */

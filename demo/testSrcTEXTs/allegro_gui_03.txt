@@ -1,0 +1,6 @@
+/* min_dist:
+ *  Returns the minimum distance between dialogs 'd1' and 'd2'. 'main_axis'
+ *  is taken account to give different weights to the axes in the distance
+ *  formula, as well as to shift the actual position of 'd2' along the axis
+ *  by the amount specified by 'bias'.
+ */

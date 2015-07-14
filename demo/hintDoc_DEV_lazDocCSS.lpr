@@ -18,8 +18,8 @@ uses
   in0k_hintDOC,
   //---
   FPCUnitTestRunner, GuiTestRunner, Forms, uiWnd_MAIN, uiWnd_parseTree,
-  uiWnd_htmlResult, in0k_hintDOC_expM0_toHTML, in0k_hintDOC_export_Mode0, 
-in0k_hintDOC_exp_IProHTML, in0k_hintDOC_core_parserSettings, uiWnd_parseTEXT;
+  uiWnd_htmlResult, in0k_hintDOC_expM0_toHTML, in0k_hintDOC_export_Mode0,
+  in0k_hintDOC_exp_IProHTML, in0k_hintDOC_core_parserSettings, uiWnd_parseTEXT;
 
 {$R *.res}
 

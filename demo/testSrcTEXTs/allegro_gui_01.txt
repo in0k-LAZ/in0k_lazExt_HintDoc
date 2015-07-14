@@ -1,0 +1,11 @@
+/* Pointers to the currently active dialog and menu objects.
+ *
+ * Note: active_dialog_player always points to the currently active dialog
+ * player. However, active_menu_player only ever points to menu players
+ * started by a d_menu_proc. The code also assumes that that d_menu_proc can
+ * be found in the currently active dialog.
+ *
+ * Note: active_dialog points to the whole dialog currently running. However,
+ * active_menu points to the *current item* of the currently running menu,
+ * and should really have been called active_menu_item.
+ */

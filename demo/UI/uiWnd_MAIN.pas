@@ -176,6 +176,10 @@ end;
 procedure Twnd_MAIN.FormCreate(Sender: TObject);
 begin
    hintDOC_Object:=tIn0k_hintDOC_Object.Create;
+   hintDOC_Object.TokenStart:='<START>';
+   hintDOC_Object.TokenFinal:='<fiNAL>';
+
+
    hintDOC_Parcer:=tIn0k_hintDOC_Parser.Create;
    hintDOC_toHTML:=tIn0k_hintDOC_exp_IProHTML.Create;
    //---

@@ -1,0 +1,3 @@
+/* bitmap_font_count:
+ *  Helper for `import_bitmap_font', below.
+ */

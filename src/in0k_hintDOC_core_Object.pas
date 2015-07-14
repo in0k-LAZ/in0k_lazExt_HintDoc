@@ -1934,6 +1934,7 @@ begin {todo : делать по НАБОРУ скобок}
        _lxr_setSrcTxtRAW(ol,Source);
         beenFound:=false
             or _processing_brackets_excPAIR(OL,Source, '(',')')
+            or _processing_brackets_excPAIR(OL,Source, '[',']')
             or false;
     until not beenFound;
     //--- расчет начал и концов
@@ -2630,12 +2631,8 @@ begin
        _parse01_slct_LBL(OL);
         //---
         itm:=OL.obj._ITMs_root;
-
+        // ПАРСИМся
        _processing_NODE(ol,itm);
-
-       // ПАРСИМся
-//       _execute_parseS0(OL);
-//       _execute_parseS1(OL);
         // отчитываемся
         hintDOC_Object._wrk_parsed:=true;
     except// что-то пошло не так
