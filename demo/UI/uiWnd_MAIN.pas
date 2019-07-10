@@ -4,7 +4,7 @@ unit uiWnd_MAIN;
 
 interface
 
-uses in0k_hintDOC,
+uses in0k_hintDOC,LazUTF8,
      in0k_hintDOC_expM0_toHTML,
      in0k_hintDOC_exp_IProHTML,
      //in0k_lazExt_hintDOC_exp_IProHTML,
@@ -260,10 +260,10 @@ var src_Length  :integer;
     NestedComments:boolean;
 begin
     Result:='';
-    src_Length:=length(srcText);
+    src_Length:=UTF8Length(srcText);
     if src_Length>0 then begin
         NestedComments:=true;
-        CommentStart:=0;
+        CommentStart:=1;
         while CommentStart<src_Length do begin
             CommentStart:=FindNextComment(srcText,CommentStart,src_Length);
             if CommentStart<src_Length then begin
@@ -425,8 +425,8 @@ ls,lc:integer;
 begin //
     s:=copy(hintDOC_Object.SourceText,1,sPos);
     c:=copy(hintDOC_Object.SourceText,1+sPos,sLen);
-    ls:=UTF8Length(s);
-    lc:=UTF8Length(c);
+    ls:=Length(s);
+    lc:=Length(c);
     //SynMemo1.SelStart :=ls;//i;
     //SynMemo1.SelEnd   :=ls+lc;//i;
     SynMemo2.SelStart :=1+sPos;//i;

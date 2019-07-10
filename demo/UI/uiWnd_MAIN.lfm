@@ -8,7 +8,7 @@ object wnd_MAIN: Twnd_MAIN
   ClientWidth = 649
   OnCreate = FormCreate
   OnDestroy = FormDestroy
-  LCLVersion = '1.4.0.4'
+  LCLVersion = '2.0.2.0'
   object Panel1: TPanel
     Left = 0
     Height = 28
@@ -802,6 +802,7 @@ object wnd_MAIN: Twnd_MAIN
             ShortCut = 57379
           end>
         MouseActions = <>
+        MouseTextActions = <>
         MouseSelActions = <>
         Lines.Strings = (
           '{sdf gsdfg sdfg'
@@ -833,6 +834,7 @@ object wnd_MAIN: Twnd_MAIN
           'dF asdf '
           '}'
         )
+        VisibleSpecialChars = [vscSpace, vscTabAtLast]
         SelectedColor.BackPriority = 50
         SelectedColor.ForePriority = 50
         SelectedColor.FramePriority = 50
@@ -1320,7 +1322,9 @@ object wnd_MAIN: Twnd_MAIN
             ShortCut = 57379
           end>
         MouseActions = <>
+        MouseTextActions = <>
         MouseSelActions = <>
+        VisibleSpecialChars = [vscSpace, vscTabAtLast]
         ReadOnly = True
         SelectedColor.BackPriority = 50
         SelectedColor.ForePriority = 50
